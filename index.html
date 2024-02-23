@@ -1,62 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CleverTap</title>
-
+<head>
     <script type="text/javascript">
-      var clevertap = {
-        event: [],
-        profile: [],
-        account: [],
-        onUserLogin: [],
-        notifications: [],
-        privacy: [],
-      };
-      clevertap.account.push({ id: "ZWW-WWW-WWRZ" });
-      clevertap.privacy.push({ optOut: false });
-      clevertap.privacy.push({ useIP: false });
-      (function () {
-        var wzrk = document.createElement("script");
-        wzrk.type = "text/javascript";
-        wzrk.async = true;
-        wzrk.src =
-          ("https:" == document.location.protocol
-            ? "https://d2r1yp2w7bby2u.cloudfront.net"
-            : "http://static.clevertap.com") + "/js/a.js";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(wzrk, s);
+        var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+    // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+   clevertap.account.push({"id": "ZWW-WWW-WWRZ"});
+   clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+   clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+    (function () {
+            var wzrk = document.createElement('script');
+            wzrk.type = 'text/javascript';
+            wzrk.async = true;
+            wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
+           var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wzrk, s);
+			s.parentNode.insertBefore(wzrk, s);
         var eventProperties = {
           "Product id": 1,
           "Product Name": "CleverTap",
-          Name: "Alok Kumar Dubey",
-          Email: "alok.dubey22@spit.ac.in",
+          Name: "Yash Patil",
+          Email: "yash.patil22@spit.ac.in",
           "MSG-push": true,
         };
         clevertap.event.push("Product viewed Event", eventProperties);
       })();
+     // with the exception of one of Identity, Email, or FBID
+// each of the following fields is optional
 
-      clevertap.notifications.push({
-        titleText: "Would you like to receive Push Notifications?",
-        bodyText:
-          "We promise to only send you relevant content and give you updates on your transactions",
-        okButtonText: "Sign me up!",
-        rejectButtonText: "No thanks",
-        okButtonColor: "#F28046",
-        askAgainTimeInSeconds: 5,
-        serviceWorkerPath: "/gg.js",
-      });
-    </script>
-  </head>
-  <body>
-    <h1>CleverTap</h1>
-    <button id="script">Button</button>
-    <script>
-      document.getElementById("script").addEventListener("click", function () {
-        alert("Button clicked!");
-      });
-    </script>
-  </body>
+clevertap.event.push("Product viewed", {
+    "Product id": 1,
+    "Product name": "Clevertap",
+    "Name": "Yash Patil",
+    "Email": "yash.patil22@spit.ac.in",
+  //  "Date": new Date()
+    });
+   </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('assets/images/welcome-hero/demo4.png'); /* Replace 'background_image.jpg' with the path to your image */
+            height: auto;
+            width: auto;
+            background-position: center;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background to improve readability */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); /* Adding a semi-transparent background to improve readability */
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+            color: #fff; /* Changing text color to improve readability */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background to improve readability */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Simple Website</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <section>
+        <button id="script">Click Me</button>
+        <h2>About Us</h2>
+        <p>This is a simple website created with HTML.</p>
+        <button>Learn More</button>
+        <button>Contact Us</button>
+    </section>
+    <footer>
+        <p>&copy; 2024 My Simple Website. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+	document.getElementById("script").addEventListener("click", function () {
+	  alert("Button clicked!");
+	});
+  </script>
 </html>
