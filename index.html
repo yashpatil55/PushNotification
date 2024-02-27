@@ -54,6 +54,10 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
    let native = () => {
                 clevertap.event.push("NativeDis");
             };
+   function webnative()
+	{
+		clevertap.event.push("web native display event triggered");
+	}
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,9 +138,13 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
 	<button class="button" id="push" onclick="pushnotification()">Web Push </button>
 	<button class="button" id="popup" onclick="popup()">Web Pop-up </button>
 	<button class="button" id="inbox" onclick="inboxin()">Web Inbox </button>
-	<div id="disnat">
-       <button class="button" onclick="native()">Native Display </button>
-       </div> 
+	<div id="nativedisplay">
+		<button onclick="webnative()">Clevertap web native display</button><br>
+		</div><br><br>
+
+
+
+
     </section>
     <footer>
         <p>&copy; 2024 My Simple Website. All rights reserved.</p>
