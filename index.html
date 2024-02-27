@@ -42,10 +42,12 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
         });
     };
                 
-let pushnotification = () => {
+   let pushnotification = () => {
                 clevertap.event.push("productview1");
             };
-
+   let popup = () => {
+                clevertap.event.push("Web Pop-up");
+            };
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -124,6 +126,7 @@ let pushnotification = () => {
         <p>This is a simple website created with HTML.</p>
         <button class="button" id="loc" onclick="pushnotif()">Send Notification</button>
 	<button class="button" id="push" onclick="pushnotification()">Web Push </button>
+	<button class="button" id="popup" onclick="popup()">Web Pop-up </button>
         <button>Learn More</button>
         <button>Contact Us</button>
         
