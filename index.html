@@ -35,6 +35,19 @@
         clevertap.event.push("Product viewed Event", eventProperties);
 	    clevertap.event.push("productview1", eventProperties);
       })();
+	clevertap.onUserLogin.push({
+                    "Site": {
+                        "Name": "Yash Patil",
+                        "Identity":"19330055" ,
+                        "Email": "yash@gmial.com",
+                        "Gender": "M",
+                        "Sign Up": new Date(),
+                        "MSG-email": true,
+                        "MSG-push": true,
+                        "MSG-sms": true,
+                        "MSG-whatsapp": true,
+                    },
+                });
    </script>
    
    
@@ -139,21 +152,7 @@
             "serviceWorkerPath": "clevertap_sw.js" // path to your custom service worker file
         });
     };
-    let onuserlogin = () => {
-                clevertap.onUserLogin.push({
-                    "Site": {
-                        "Name": "Yash Patil",
-                        "Identity":"19330055" ,
-                        "Email": "yash@gmial.com",
-                        "Gender": "M",
-                        "Sign Up": new Date(),
-                        "MSG-email": true,
-                        "MSG-push": true,
-                        "MSG-sms": true,
-                        "MSG-whatsapp": true,
-                    },
-                });
-            };
+                
 let pushnotification = () => {
                 clevertap.event.push("productview1");
             };
