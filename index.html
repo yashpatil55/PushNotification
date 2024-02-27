@@ -48,7 +48,7 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
    let popup = () => {
                 clevertap.event.push("WebPop");
             };
-   let inbox = () => {
+   let inboxin = () => {
                 clevertap.event.push("WebInboxIn");
             };
 </script>
@@ -130,7 +130,7 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
         <button class="button" id="loc" onclick="pushnotif()">Send Notification</button>
 	<button class="button" id="push" onclick="pushnotification()">Web Push </button>
 	<button class="button" id="popup" onclick="popup()">Web Pop-up </button>
-	<button class="button" id="inbox" onclick="inbox()">Web Inbox </button>
+	<button class="button" id="inbox" onclick="inboxin()">Web Inbox </button>
         <button>Learn More</button>
         <button>Contact Us</button>
         
