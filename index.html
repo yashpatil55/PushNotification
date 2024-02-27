@@ -52,6 +52,27 @@
    
    
   </script>
+	    <script>
+	document.getElementById("script").addEventListener("click", function () {
+	});
+  </script>
+  <script>
+    let pushnotif = () => {
+        clevertap.notifications.push({
+            "titleText": "Would you like to receive Push Notifications?",
+            "bodyText": "We promise to only send you relevant content and give you updates on your transactions",
+            "okButtonText": "Sign me up!",
+            "rejectButtonText": "No thanks",
+            "okButtonColor": "#F28046",
+            "serviceWorkerPath": "clevertap_sw.js" // path to your custom service worker file
+        });
+    };
+                
+let pushnotification = () => {
+                clevertap.event.push("productview1");
+            };
+
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Simple Website</title>
@@ -137,26 +158,6 @@
         <p>&copy; 2024 My Simple Website. All rights reserved.</p>
     </footer>
 </body>
-<script>
-	document.getElementById("script").addEventListener("click", function () {
-	});
-  </script>
-  <script>
-    let pushnotif = () => {
-        clevertap.notifications.push({
-            "titleText": "Would you like to receive Push Notifications?",
-            "bodyText": "We promise to only send you relevant content and give you updates on your transactions",
-            "okButtonText": "Sign me up!",
-            "rejectButtonText": "No thanks",
-            "okButtonColor": "#F28046",
-            "serviceWorkerPath": "clevertap_sw.js" // path to your custom service worker file
-        });
-    };
-                
-let pushnotification = () => {
-                clevertap.event.push("productview1");
-            };
 
-</script>
 </html>
  
