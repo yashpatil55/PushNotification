@@ -15,50 +15,11 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
         var s = document.getElementsByTagName('script')[0];
          s.parentNode.insertBefore(wzrk, s);
   })();
-	clevertap.onUserLogin.push({
-                        "Name": "Yash Patil",
-                        "Identity":"19330055" ,
-                        "Email": "yash@gmail.com",
-                        "Gender": "M",
-                        "Sign Up": new Date(),
-                        "MSG-email": true,
-                        "MSG-push": true,
-                        "MSG-sms": true,
-                        "MSG-whatsapp": true,
-                });
+	    clevertap.event.push("NativeDis");
+	
    </script>
    
-   
-  </script>
-  <script>
-    let pushnotif = () => {
-        clevertap.notifications.push({
-            "titleText": "Would you like to receive Push Notifications?",
-            "bodyText": "We promise to only send you relevant content and give you updates on your transactions",
-            "okButtonText": "Sign me up!",
-            "rejectButtonText": "No thanks",
-            "okButtonColor": "#F28046",
-            "serviceWorkerPath": "clevertap_sw.js" // path to your custom service worker file
-        });
-    };
-                
-   let pushnotification = () => {
-                clevertap.event.push("productview1");
-            };
-   let popup = () => {
-                clevertap.event.push("WebPop");
-            };
-   let inboxin = () => {
-                clevertap.event.push("WebInboxIn");
-            };
-   let native = () => {
-                clevertap.event.push("NativeDis");
-            };
-   function webnative()
-	{
-		clevertap.event.push("web native display event triggered");
-	}
-</script>
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Simple Website</title>
@@ -121,6 +82,47 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
     </style>
 </head>
 <body>
+
+	<script>
+  let onuserlogin = () => {
+	  clevertap.onUserLogin.push({
+		"Name": "Yash Patil",
+		"Identity":"19330055" ,
+		"Email": "yash@gmail.com",
+		"Gender": "M",
+		"Sign Up": new Date(),
+		"MSG-email": true,
+		"MSG-push": true,
+		"MSG-sms": true,
+		"MSG-whatsapp": true,
+	});
+  }
+	  
+    let pushnotif = () => {
+        clevertap.notifications.push({
+            "titleText": "Would you like to receive Push Notifications?",
+            "bodyText": "We promise to only send you relevant content and give you updates on your transactions",
+            "okButtonText": "Sign me up!",
+            "rejectButtonText": "No thanks",
+            "okButtonColor": "#F28046",
+            "serviceWorkerPath": "clevertap_sw.js" // path to your custom service worker file
+        });
+    };
+                
+   let pushnotification = () => {
+                clevertap.event.push("productview1");
+            };
+   let popup = () => {
+                clevertap.event.push("WebPop");
+            };
+   let inboxin = () => {
+                clevertap.event.push("WebInboxIn");
+            };
+   let webnative = () => {
+                clevertap.event.push("NativeDis");
+            };
+</script>
+	
     <header>
         <h1>Welcome to My Simple Website</h1>
     </header>
@@ -138,9 +140,9 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
 	<button class="button" id="push" onclick="pushnotification()">Web Push </button>
 	<button class="button" id="popup" onclick="popup()">Web Pop-up </button>
 	<button class="button" id="inbox" onclick="inboxin()">Web Inbox </button>
-	<div id="nativedisplay">
-		<button onclick="webnative()">Clevertap web native display</button><br>
-		</div><br><br>
+	<button class="button" id="onuser" onclick="onuserlogin()">Web Inbox </button>
+	<button class="button" id="webnet" onclick="webnative()">Web Inbox </button>
+	<div id="nativedisplay"></div><br><br>
 
 
 
